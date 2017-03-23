@@ -1,0 +1,59 @@
+{
+  "uid" : "490e5d2a49d4a520",
+  "name" : "testMethodsThree",
+  "title" : "Test methods three",
+  "time" : {
+    "start" : 1490245965783,
+    "stop" : 1490245970787,
+    "duration" : 5004
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "f3e5f8e7dfdd43e3",
+    "name" : "Test-method Suite : Test-method test",
+    "title" : "Test-method Suite : Test-method test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "host",
+    "value" : "HaDos-MacBook-Pro.local"
+  }, {
+    "name" : "testClass",
+    "value" : "modules.ParallelTest"
+  }, {
+    "name" : "testSuite",
+    "value" : "Test-method Suite"
+  }, {
+    "name" : "suite-name",
+    "value" : "Test-method Suite : Test-method test"
+  }, {
+    "name" : "testGroup",
+    "value" : "Test-method test"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "suite-title",
+    "value" : "Test-method Suite : Test-method test"
+  }, {
+    "name" : "thread",
+    "value" : "69897@HaDos-MacBook-Pro.local.TestNG-test=Test-method test-1(20)"
+  }, {
+    "name" : "testMethod",
+    "value" : "testMethodsThree"
+  } ],
+  "parameters" : [ ]
+}

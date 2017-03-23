@@ -1,0 +1,59 @@
+{
+  "uid" : "150f66d940e74d6a",
+  "name" : "testMethodOne",
+  "title" : "Test method one",
+  "time" : {
+    "start" : 1490245960625,
+    "stop" : 1490245960625,
+    "duration" : 0
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "621a73746470912f",
+    "name" : "Test-class Suite : Test-class test",
+    "title" : "Test-class Suite : Test-class test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "testGroup",
+    "value" : "Test-class test"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "host",
+    "value" : "HaDos-MacBook-Pro.local"
+  }, {
+    "name" : "suite-title",
+    "value" : "Test-class Suite : Test-class test"
+  }, {
+    "name" : "testMethod",
+    "value" : "testMethodOne"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testClass",
+    "value" : "modules.ParallelClass2Test"
+  }, {
+    "name" : "thread",
+    "value" : "69897@HaDos-MacBook-Pro.local.TestNG-test=Test-class test-2(19)"
+  }, {
+    "name" : "testSuite",
+    "value" : "Test-class Suite"
+  }, {
+    "name" : "suite-name",
+    "value" : "Test-class Suite : Test-class test"
+  } ],
+  "parameters" : [ ]
+}

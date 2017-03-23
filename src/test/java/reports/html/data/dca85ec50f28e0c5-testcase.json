@@ -1,0 +1,59 @@
+{
+  "uid" : "dca85ec50f28e0c5",
+  "name" : "testCaseThree",
+  "title" : "Test case three",
+  "time" : {
+    "start" : 1490245960210,
+    "stop" : 1490245960211,
+    "duration" : 1
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "ac5587cd5fc7ed10",
+    "name" : "Groups test : Sample",
+    "title" : "Groups test : Sample"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "host",
+    "value" : "HaDos-MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "69897@HaDos-MacBook-Pro.local.main(1)"
+  }, {
+    "name" : "testClass",
+    "value" : "modules.GroupTest"
+  }, {
+    "name" : "suite-name",
+    "value" : "Groups test : Sample"
+  }, {
+    "name" : "testGroup",
+    "value" : "Sample"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "suite-title",
+    "value" : "Groups test : Sample"
+  }, {
+    "name" : "testSuite",
+    "value" : "Groups test"
+  }, {
+    "name" : "testMethod",
+    "value" : "testCaseThree"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Groups test">
+    <test name="Sample">
+        <groups>
+            <run>
+                <include name="Smoke Test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="modules.GroupTest" />
+        </classes>
+    </test>
+</suite>

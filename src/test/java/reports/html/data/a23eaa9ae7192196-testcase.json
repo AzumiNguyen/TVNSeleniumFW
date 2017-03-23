@@ -1,0 +1,59 @@
+{
+  "uid" : "a23eaa9ae7192196",
+  "name" : "testMethodTwo",
+  "title" : "Test method two",
+  "time" : {
+    "start" : 1490245960497,
+    "stop" : 1490245960498,
+    "duration" : 1
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "6b458a57bc886cb6",
+    "name" : "Multi Group Suite : Group Test one",
+    "title" : "Multi Group Suite : Group Test one"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "host",
+    "value" : "HaDos-MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "69897@HaDos-MacBook-Pro.local.main(1)"
+  }, {
+    "name" : "testGroup",
+    "value" : "Group Test one"
+  }, {
+    "name" : "testSuite",
+    "value" : "Multi Group Suite"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "suite-title",
+    "value" : "Multi Group Suite : Group Test one"
+  }, {
+    "name" : "testClass",
+    "value" : "modules.MultiGroupTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testMethodTwo"
+  }, {
+    "name" : "suite-name",
+    "value" : "Multi Group Suite : Group Test one"
+  } ],
+  "parameters" : [ ]
+}
