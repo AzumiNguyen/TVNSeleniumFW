@@ -2,12 +2,8 @@ package modules;
 
 import configuration.TestBase;
 import libraries.BMIFunctions;
-import org.openqa.selenium.WebDriver;
 import org.testng.AssertJUnit;
-import org.testng.annotations.*;
-import supports.CommonFunctions;
-
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.Test;
 
 
 /**
@@ -16,7 +12,8 @@ import java.util.concurrent.TimeUnit;
 public class BMITest extends TestBase{
 
 
-    @Test(dataProvider = "bmidata")
+
+    @Test(dataProvider = "bmidata",description = "Body Mass Index test")
     public static void bmi_calculate_test(String age,String gender,String height,String weight,String expectedResult) throws InterruptedException {
         BMIFunctions bmiPage = new BMIFunctions(driver);
         bmiPage.selectMetricTab();

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Groups test">
+    <listeners>
+        <listener class-name="supports.Reports"/>
+    </listeners>
     <test name="Sample">
-        <groups>
-            <run>
-                <include name="Smoke Test"/>
-            </run>
-        </groups>
         <classes>
             <class name="modules.GroupTest" />
         </classes>

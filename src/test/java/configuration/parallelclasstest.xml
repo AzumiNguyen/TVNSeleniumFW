@@ -3,6 +3,8 @@
         <classes>
             <class name="modules.ParallelClass1Test" />
             <class name="modules.ParallelClass2Test" />
+            <class name="modules.ParallelTest" />
+
         </classes>
     </test>
 </suite>

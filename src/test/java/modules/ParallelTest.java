@@ -31,19 +31,19 @@ public class ParallelTest {
     public void testMethodsTwo() throws InterruptedException {
         long id = Thread.currentThread().getId();
         System.out.println("Simple test-method Two. Thread id is: " + id);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
     @Test
     public void testMethodsThree() throws InterruptedException {
         long id = Thread.currentThread().getId();
         System.out.println("Simple test-method Three. Thread id is: " + id);
-        Thread.sleep(5000);
+        Thread.sleep(7000);
     }
     @Test
     public void testMethodsFour() throws InterruptedException {
         long id = Thread.currentThread().getId();
         System.out.println("Simple test-method Four. Thread id is: " + id);
-        Thread.sleep(5000);
+        Thread.sleep(9000);
     }
     @AfterMethod
     public void afterMethod() {

@@ -6,7 +6,9 @@ import org.testng.annotations.Test;
  * Created by hado on 3/18/17.
  */
 public class DependencyTest {
-    @Test(dependsOnMethods = {"testTwo"})
+
+
+    @Test(dependsOnMethods = {"testThree"})
     public void testOne() {
         System.out.println("Test method one");
     }

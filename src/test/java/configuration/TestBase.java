@@ -9,64 +9,77 @@ import org.testng.annotations.*;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import supports.CommonFunctions;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by hado on 3/11/17.
  */
 public class TestBase {
     public static WebDriver driver;
+    public static int TIMEOUT = 60;
+    public static String BASE_URL="";
+    final static String BROWSER ="firefox";
 
-    @Parameters({"browserName"})
+
+//    @Parameters({"browserName"})
     @BeforeTest
-    public static void init(String browserName){
-        driver = CommonFunctions.getBrowser(browserName);
+    public static void init() {
+        driver = CommonFunctions.getBrowser(BROWSER);
     }
 
     @Parameters({"url"})
     @BeforeMethod
-    public static void setUp(String url){
+    public static void setUp(String url) {
 
-        CommonFunctions.visit(driver, url);
+        CommonFunctions.visit(url);
     }
+
     @DataProvider(name = "bmidata")
     public Object[][] testData() {
-        return new Object[][] {
-                new Object[] {"25","female","160","53","BMI = 20.70 kg/m2   (Normal)"},
-                new Object[] {"25","male","180","73","BMI = 22.53 kg/m2   (Normal)"},
-                new Object[] {"31","female","150","80","BMI = 35.56 kg/m2   (Obese Class II)"},
-                new Object[] {"31","male","150","80","BMI = 35.56 kg/m2   (Obese Class II)"}
+        return new Object[][]{
+                new Object[]{"25", "female", "160", "53", "BMI = 20.70 kg/m2   (Normal)"},
+                new Object[]{"25", "male", "180", "73", "BMI = 22.53 kg/m2   (Normal)"},
+                new Object[]{"31", "female", "150", "80", "BMI = 35.56 kg/m2   (Obese Class II)"},
+                new Object[]{"31", "male", "150", "80", "BMI = 35.56 kg/m2   (Obese Class II)"}
         };
     }
-
-
 
     @AfterMethod
     public void takeScreenShotIfFailure(ITestResult testResult) throws IOException {
         String screenShotFile;
-        Date date = new Date();
-
-        //Create format date
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-
+        String tc_name = testResult.getMethod().getConstructorOrMethod().getName();
+        String dateFormat = new SimpleDateFormat("ddMMyyyy_hhmmss").format(Calendar.getInstance().getTime());
         //Create the file name with date time format then grant to "screenShotFile"
-        screenShotFile =System.getProperty("user.dir")+"/src/test/java/reports/images/"+ " TestScreenShot"+dateFormat + ".png";
+        screenShotFile = System.getProperty("user.dir") + "/src/test/java/reports/images/" + "ScreenShot_" + tc_name + "_" + dateFormat + ".png";
 
-        if (testResult.getStatus() == ITestResult.FAILURE){
-            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File(screenShotFile));
+            saveImageAttach(scrFile);
         }
     }
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
+    }
+
+    @Attachment(value = "Screenshot", type = "image/png")
+    public static byte[] saveImageAttach(File imageFile) {
+        try {
+            return toByteArray(imageFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
+    }
+
+    private static byte[] toByteArray(File file) throws IOException {
+        return Files.readAllBytes(Paths.get(file.getPath()));
     }
 }

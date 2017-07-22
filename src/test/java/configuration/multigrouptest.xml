@@ -2,21 +2,11 @@
     <test name="Group Test one">
         <groups>
             <run>
-                <include name="group-one" />
+                <include name="group-two" />
             </run>
         </groups>
         <classes>
             <class name="modules.MultiGroupTest" />
         </classes>
     </test>
-    <!--<test name="Group Test two">-->
-        <!--<groups>-->
-            <!--<run>-->
-                <!--<include name="group-two" />-->
-            <!--</run>-->
-        <!--</groups>-->
-        <!--<classes>-->
-            <!--<class name="modules.MultiGroupTest" />-->
-        <!--</classes>-->
-    <!--</test>-->
 </suite>

@@ -3,7 +3,7 @@ package modules;
 import org.testng.annotations.Test;
 
 public class PriorityTest {
-    @Test(priority=1,enabled =false)
+    @Test(priority=1)
     public void registerAccount()
     {
         System.out.println("First register your account");
