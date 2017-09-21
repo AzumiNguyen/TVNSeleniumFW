@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Groups test">
     <listeners>
-        <listener class-name="supports.Reports"/>
+        <listener class-name="supports.SlackNotify"/>
     </listeners>
     <test name="Sample">
         <classes>
