@@ -78,7 +78,7 @@ public class SlackNotify implements ITestListener {
 
             HttpClient httpClient = HttpClientBuilder.create().build();
 
-            StringEntity params = new StringEntity(String.format(body, String.format("%.1f", percentPassed * 100), "Chrome", currentTime));
+            StringEntity params = new StringEntity(String.format(body, String.format("%.1f", percentPassed * 100), System.getenv("browser.name"), currentTime));
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
             httpClient.execute(request);
