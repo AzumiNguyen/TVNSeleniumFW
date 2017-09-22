@@ -4,35 +4,34 @@ pipeline {
         maven 'M3'
     }
     stages {
-        stage ('Build') {
-                steps{
-                    parallel(
-                                            'firefox': {
-                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
-                                                        sh 'mvn -Dbrower.name=firefox clean test'
-                                                     },
-                                            'chrome': {
-                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
-                                                        sh 'mvn -Dbrower.name=chrome clean test'
-                                                     },
-                                            'safari': {
-                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
-                                                        sh 'mvn -Dbrower.name=safari clean test'
-                                                     }
-                                            )
-                    allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+        stage ('Test') {
+            parallel{
+                stage('firefox'){
+                 slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
+                 sh 'mvn -Dbrower.name=firefox clean test'
                 }
-
-
-
-            post {
-                success {
-                   slackSend channel: '#auto',color:'good',message:"Finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}/allure|Open>)"
+                stage('chrome'){
+                 slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
+                 sh 'mvn -Dbrower.name=chrome clean test'
                 }
-                failure {
-                   slackSend channel: '#auto',color:'bad',message:"Finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}/allure|Open>)"
+                stage('safari'){
+                 slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
+                 sh 'mvn -Dbrower.name=safari clean test'
                 }
             }
+        }
+        stage('Reporting'){
+          steps{
+                 allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+               }
+          post {
+              success {
+                 slackSend channel: '#auto',color:'good',message:"Finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}/allure|Open>)"
+              }
+              failure {
+                 slackSend channel: '#auto',color:'bad',message:"Finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}/allure|Open>)"
+              }
+          }
         }
     }
 }
