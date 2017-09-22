@@ -5,21 +5,21 @@ pipeline {
     }
     stages {
         stage ('Build') {
-                parallel(
-                        'firefox': {
-                                    slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
-                                    sh 'mvn -Dbrower.name=firefox clean test'
-                                 },
-                        'chrome': {
-                                    slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
-                                    sh 'mvn -Dbrower.name=chrome clean test'
-                                 },
-                        'safari': {
-                                    slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
-                                    sh 'mvn -Dbrower.name=safari clean test'
-                                 }
-                        )
                 steps{
+                    parallel(
+                                            'firefox': {
+                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
+                                                        sh 'mvn -Dbrower.name=firefox clean test'
+                                                     },
+                                            'chrome': {
+                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
+                                                        sh 'mvn -Dbrower.name=chrome clean test'
+                                                     },
+                                            'safari': {
+                                                        slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
+                                                        sh 'mvn -Dbrower.name=safari clean test'
+                                                     }
+                                            )
                     allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
                 }
 
