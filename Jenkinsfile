@@ -3,7 +3,6 @@ pipeline{
     stages {
         def mvnHome
         stage('Preparation') { // for display purposes
-          git 'https://github.com/cuhavp/TVNSeleniumFW.git'
           mvnHome = tool 'M3'
         }
         stage('Run Selenium Test') {
