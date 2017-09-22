@@ -1,9 +1,9 @@
 pipeline{
     agent any
     stages {
-        def mvnHome
         stage('Preparation') { // for display purposes
-          mvnHome = tool 'M3'
+          checkout scm
+          def mvnHome = tool 'M3'
         }
         stage('Run Selenium Test') {
           slackSend channel: '#auto',color:'#581845',message:"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
