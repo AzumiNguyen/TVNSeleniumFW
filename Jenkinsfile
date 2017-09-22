@@ -19,7 +19,10 @@ pipeline {
                                     sh 'mvn -Dbrower.name=safari clean test'
                                  }
                         )
-                allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+                steps{
+                    allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+                }
+
 
 
             post {
