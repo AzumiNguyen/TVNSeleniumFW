@@ -45,6 +45,7 @@ public class BMIFunctions extends BMIPage {
 
     public String getBmiResult()  {
 
+
         return lblBmiResult.getText();
     }
 }

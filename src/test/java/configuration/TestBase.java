@@ -29,7 +29,7 @@ public class TestBase {
 //    @Parameters({"browserName"})
     @BeforeTest
     public static void init() {
-        driver = CommonFunctions.getBrowser(System.getenv("browser.name"));
+        driver = CommonFunctions.getBrowser(System.getProperty("browser.name"));
     }
 
     @Parameters({"url"})
@@ -42,10 +42,7 @@ public class TestBase {
     @DataProvider(name = "bmidata")
     public Object[][] testData() {
         return new Object[][]{
-                new Object[]{"25", "female", "160", "53", "BMI = 20.70 kg/m2   (Normal)"},
-                new Object[]{"25", "male", "180", "73", "BMI = 22.53 kg/m2   (Normal)"},
-                new Object[]{"31", "female", "150", "80", "BMI = 35.56 kg/m2   (Obese Class II)"},
-                new Object[]{"31", "male", "150", "80", "BMI = 35.56 kg/m2   (Obese Class II)"}
+                new Object[]{"25", "female", "160", "53", "BMI = 20.70 kg/m2   (Normal)"}
         };
     }
 
