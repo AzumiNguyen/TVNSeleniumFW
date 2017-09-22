@@ -1,5 +1,6 @@
 pipeline{
-    node {
+    agent any
+    stages {
         def mvnHome
         stage('Preparation') { // for display purposes
           git 'https://github.com/cuhavp/TVNSeleniumFW.git'
