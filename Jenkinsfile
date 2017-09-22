@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         stage ('Build') {
-                parallel
+                parallel(
                         'firefox': {
                                     slackSend channel: '#auto', color: 'good', message: 'Start Test On Firefox'
                                     sh 'mvn -Dbrower.name=firefox clean test'
@@ -18,6 +18,7 @@ pipeline {
                                     slackSend channel: '#auto', color: 'good', message: 'Start Test On Chrome'
                                     sh 'mvn -Dbrower.name=safari clean test'
                                  }
+                        )
                 allure commandline: 'allure', includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
 
 
