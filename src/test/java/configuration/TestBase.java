@@ -26,9 +26,9 @@ public class TestBase {
     final static String BROWSER ="firefox";
 
 
-    @Parameters({"browserName"})
+//    @Parameters({"browserName"})
     @BeforeTest
-    public static void init(String browserName) {
+    public static void init() {
         driver = CommonFunctions.getBrowser(System.getenv("browser.name"));
     }
 
