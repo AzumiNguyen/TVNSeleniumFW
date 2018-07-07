@@ -1,0 +1,9 @@
+<suite name="TestNG sample">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="http://www.calculator.net/bmi-calculator.html"/>
+    <test name="Basic">
+        <classes>
+            <class name="modules.TestNGSample"/>
+        </classes>
+    </test>
+</suite>

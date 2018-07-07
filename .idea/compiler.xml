@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AK10" />
+        <module name="AK16" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AK10" target="1.7" />
+      <module name="AK16" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

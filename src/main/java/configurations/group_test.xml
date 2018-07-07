@@ -1,0 +1,12 @@
+<suite name="Time test Suite" verbose="1">
+    <listeners>
+        <listener class-name="supports.ExcelReport"/>
+    </listeners>
+    <test name="Group Test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="http://www.calculator.net/bmi-calculator.html"/>
+        <classes>
+            <class name="modules.GroupTest"/>
+        </classes>
+    </test>
+</suite>
